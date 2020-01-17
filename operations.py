@@ -19,6 +19,8 @@ def calc_money_value(money_value, year):
 
     if int(year) < int(min(inflation_dict)):
         return "Year not in registered range"
+    if money_value < 0:
+        return "Money cannot be negative"
 
     for k_year in inflation_dict.keys():
         if int(year) <= int(k_year):
